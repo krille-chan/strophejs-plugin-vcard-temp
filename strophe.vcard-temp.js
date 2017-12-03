@@ -101,7 +101,7 @@ Author: Christian Pauly
 
 			this._connection.sendIQ(req,
 						function(iq)
-						{	console.log(iq);
+						{
 							var vcard = iq.querySelector("vCard");
 							var arr = XMLToArray(vcard);
 							if( "vCard" in arr )
@@ -109,7 +109,7 @@ Author: Christian Pauly
 							success_callback(arr,from);
 						},
 						function(iq)
-						{	console.log(iq);
+						{
 							var text = "";
 							if(iq.querySelector("text") != null)
 								text = iq.querySelector("text").innerHTML;
